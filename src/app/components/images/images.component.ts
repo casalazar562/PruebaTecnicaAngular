@@ -42,6 +42,8 @@ export class ImagesComponent implements OnInit {
   get cateoryField() {
     return this.form.get('category');
   }
+
+  // función para traer las imagenes por las palabras ingresadas en el input.
   getImages(){
 
   this.imagesService.getImages( document.getElementById('word')['value']).subscribe((data: any[]) => {
@@ -55,6 +57,7 @@ export class ImagesComponent implements OnInit {
 
     }
 
+    // metodo para traer las imagenes por categoria las cuales se eligen en el select.
   getImagesSelect(){
 
   this.imagesService.getImagesSelect( document.getElementById('category')['value']).subscribe((data: any[]) => {
